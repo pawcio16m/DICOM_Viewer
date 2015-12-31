@@ -13,10 +13,10 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class DrawComponent extends JComponent {
-    /*public static final int MESSAGE_X = 75;
+public class DrawComponent extends JComponent{
+    public static final int MESSAGE_X = 75;
     public static final int MESSAGE_Y = 100;
-    public void paintComponent(Graphics g){
+    /*public void paintComponent(Graphics g){
         //g.drawString("To nie jest program Hello World!", MESSAGE_X, MESSAGE_Y);
         Graphics2D g2 = (Graphics2D) g;
         double centerX= 400;
@@ -30,25 +30,27 @@ public class DrawComponent extends JComponent {
 
     }*/
     private BufferedImage image;
+
     public DrawComponent(String filename){
-        try{
+        super();
+        try {
             image = ImageIO.read(new File(filename));
             System.out.println(filename);
-
-        }
-        catch (IOException e){
+            //System.out.println(filename);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        setVisible(true);
 
     }
     @Override
     public void paintComponent(Graphics g) {
+        //super.paintComponent(g);
         if(image==null) return;
 
-        int imageHeight = image.getHeight(this);
-        int imageWidth = image.getWidth(this);
+        g.drawImage(this.image,20,20,800,600,null);
 
-        g.drawImage(image,0,0,imageWidth,imageHeight,null);
+
 
     }
 }

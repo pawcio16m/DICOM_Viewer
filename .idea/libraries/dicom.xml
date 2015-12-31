@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dicom">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../dicom-imageio-plugin-demo-1.11/dicom-imageio-plugin-1.11/lib/dicom.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
